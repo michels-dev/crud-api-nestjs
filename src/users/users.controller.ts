@@ -3,9 +3,10 @@ import { UsersService } from './users.service';
 import { User } from './user.entity';
 
 @Controller('users')
-export class UsersController {
-    constructor(private readonly usersService: UsersService){}
+export class UsersController { // menggunakan dekorator untuk memberi tahu nestjs bahwa ini adalah sebuah kontroller, dan bahwa rutenya adalah "users"
+    constructor(private readonly usersService: UsersService){} // mendefinisikan konstruktor kelas, dan memberi UserService
 
+    // mendefinisikan 5 metode : findAll, findOne, create, update, delete dengan menggunakan HTTP yang digunakan dan menggunakan UserService untuk memanggil metode yang sesuai
     // get all users
     @Get()
     async findAll(): Promise<User[]>{
