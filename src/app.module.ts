@@ -4,11 +4,13 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { SiswaModule } from './siswa/siswa.module';
 
 @Module({
   imports: [ // mengimport ConfigModule, UsersModule, TypeOrmModule
     ConfigModule.forRoot(), // mengimport ConfigModule, UsersModule, TypeOrmModule dalam array
     UsersModule,
+    SiswaModule,
     TypeOrmModule.forRoot({ // menggunakan forRoot untuk memberitahu nestjs menggunakan koneksi default, mendefinisikan variabel untuk menyambungkan ke basis data
       type: process.env.DB_TYPE as any, // mengatur dalam berkas docker-compose.yml
       host: process.env.PG_HOST,

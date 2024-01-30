@@ -67,4 +67,7 @@ export class DataSiswa {
 
     @Column()
     status_aktif_sekolah: number;
+
+    @Column()
+    notes: string;
 }
