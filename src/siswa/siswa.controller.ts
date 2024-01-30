@@ -13,7 +13,7 @@ export class SiswaController {
     }
 
     // get siswa by id
-    @Get()
+    @Get(':id')
     async findOne(@Param('id') id: number): Promise<DataSiswa> {
         const siswa = await this.siswaService.findOne(id);
         if(!siswa){
