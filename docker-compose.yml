@@ -19,9 +19,9 @@ services:
     container_name: db
     image: postgres:12
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: michels05
-      POSTGRES_DB: testdb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=michels05
+      - POSTGRES_DB=testdb
     ports:
       - '5432:5432'
     volumes:

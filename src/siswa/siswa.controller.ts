@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, NotFoundException, Param, Post, Put } fr
 import { SiswaService } from './siswa.service';
 import { DataSiswa } from './datasiswa.entity';
 
-@Controller('siswa')
+@Controller('sas_master_siswa')
 export class SiswaController {
     constructor(private readonly siswaService: SiswaService ) {}
 
@@ -15,32 +15,32 @@ export class SiswaController {
     // get siswa by id
     @Get(':id')
     async findOne(@Param('id') id: number): Promise<DataSiswa> {
-        const siswa = await this.siswaService.findOne(id);
-        if(!siswa){
+        const sas_master_siswa = await this.siswaService.findOne(id);
+        if(!sas_master_siswa){
             throw new NotFoundException('User does not exist');
         } else {
-            return siswa;
+            return sas_master_siswa;
         }
     }
 
     // create siswa
     @Post()
-    async create(@Body() siswa: DataSiswa): Promise<DataSiswa> {
-        return this.siswaService.create(siswa);
+    async create(@Body() sas_master_siswa: DataSiswa): Promise<DataSiswa> {
+        return this.siswaService.create(sas_master_siswa);
     }
 
     // update siswa
     @Put(':id')
-    async update(@Param('id') id:number, @Body() siswa: DataSiswa): Promise<any> {
-        return this.siswaService.update(id, siswa);
+    async update(@Param('id') id:number, @Body() sas_master_siswa: DataSiswa): Promise<any> {
+        return this.siswaService.update(id, sas_master_siswa);
     }
 
     // delete siswa
     @Delete(':id')
     async delete(@Param('id') id:number): Promise<any> {
         // handle error if siswa does not exist
-        const siswa = await this.siswaService.findOne(id);
-        if(!siswa){
+        const sas_master_siswa = await this.siswaService.findOne(id);
+        if(!sas_master_siswa){
             throw new NotFoundException('Siswa does not exist');
         }
         return this.siswaService.delete(id);

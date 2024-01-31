@@ -18,13 +18,13 @@ export class SiswaService {
         return this.siswaRepository.findOne({where: {id}});
     }
 
-    async create(datasiswa: Partial<DataSiswa>): Promise<DataSiswa> {
-        const newsiswa = this.siswaRepository.create(datasiswa);
+    async create(sas_master_siswa: Partial<DataSiswa>): Promise<DataSiswa> {
+        const newsiswa = this.siswaRepository.create(sas_master_siswa);
         return this.siswaRepository.save(newsiswa);
     }
 
-    async update(id: number, datasiswa: Partial<DataSiswa>): Promise<DataSiswa> {
-        await this.siswaRepository.update(id, datasiswa);
+    async update(id: number, sas_master_siswa: Partial<DataSiswa>): Promise<DataSiswa> {
+        await this.siswaRepository.update(id, sas_master_siswa);
         return this.siswaRepository.findOne({where:{id}});
     }
 
