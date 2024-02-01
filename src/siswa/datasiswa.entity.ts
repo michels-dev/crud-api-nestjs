@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
+@Entity('sas_master_siswa')
 export class DataSiswa {
     @PrimaryGeneratedColumn()
     id: number;
